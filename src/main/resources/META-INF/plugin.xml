@@ -1,0 +1,13 @@
+<idea-plugin>
+    <id>com.github.pitcer.partialscroll</id>
+    <name>Partial Scroll</name>
+    <version>0.1.0</version>
+    <depends>com.intellij.modules.platform</depends>
+    <vendor url="https://github.com/pitcer">Piotr Dobiech</vendor>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable parentId="tools" instance="com.github.pitcer.partialscroll.PartialScrollSettingsConfigurable"
+                                 id="com.github.pitcer.partialscroll.PartialScrollSettingsConfigurable"/>
+        <applicationService serviceImplementation="com.github.pitcer.partialscroll.PartialScrollSettingsState"/>
+    </extensions>
+</idea-plugin>
