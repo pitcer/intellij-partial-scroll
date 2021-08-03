@@ -6,8 +6,28 @@
     <vendor url="https://github.com/pitcer">Piotr Dobiech</vendor>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationConfigurable parentId="tools" instance="com.github.pitcer.partialscroll.PartialScrollSettingsConfigurable"
-                                 id="com.github.pitcer.partialscroll.PartialScrollSettingsConfigurable"/>
-        <applicationService serviceImplementation="com.github.pitcer.partialscroll.PartialScrollSettingsState"/>
+        <applicationConfigurable
+            parentId="tools"
+            id="com.github.pitcer.partialscroll.settings.PartialScrollSettingsConfigurable"
+            instance="com.github.pitcer.partialscroll.settings.PartialScrollSettingsConfigurable"
+        />
+        <applicationService
+            serviceImplementation="com.github.pitcer.partialscroll.settings.PartialScrollSettingsState"
+        />
     </extensions>
+
+    <actions>
+        <action
+            id="com.github.pitcer.partialscroll.action.PartialScrollUpAction"
+            class="com.github.pitcer.partialscroll.action.PartialScrollUpAction"
+            text="Partial Scroll Up"
+            description="Scrolls view partially up"
+        />
+        <action
+            id="com.github.pitcer.partialscroll.action.PartialScrollDownAction"
+            class="com.github.pitcer.partialscroll.action.PartialScrollDownAction"
+            text="Partial Scroll Down"
+            description="Scrolls view partially down"
+        />
+    </actions>
 </idea-plugin>
