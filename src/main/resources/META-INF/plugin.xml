@@ -4,6 +4,7 @@
     <version>0.1.0</version>
     <depends>com.intellij.modules.platform</depends>
     <vendor url="https://github.com/pitcer">Piotr Dobiech</vendor>
+    <idea-version since-build="211" />
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable
