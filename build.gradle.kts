@@ -1,11 +1,11 @@
 plugins {
     java
-    kotlin("jvm") version "1.5.21"
-    id("org.jetbrains.intellij") version "1.1.3"
+    kotlin("jvm") version "1.7.10"
+    id("org.jetbrains.intellij") version "1.7.0"
 }
 
 group = "com.github.pitcer.partialscroll"
-version = "0.1.0"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -25,6 +25,6 @@ tasks {
 }
 
 intellij {
-    version.set("2021.1")
+    version.set("2022.1")
     updateSinceUntilBuild.set(false)
 }
