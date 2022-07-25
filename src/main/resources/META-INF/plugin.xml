@@ -1,10 +1,10 @@
 <idea-plugin>
     <id>com.github.pitcer.partialscroll</id>
     <name>Partial Scroll</name>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <depends>com.intellij.modules.platform</depends>
     <vendor url="https://github.com/pitcer">Piotr Dobiech</vendor>
-    <idea-version since-build="221" />
+    <idea-version since-build="221"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable
@@ -19,16 +19,42 @@
 
     <actions>
         <action
-            id="com.github.pitcer.partialscroll.action.PartialScrollUpAction"
-            class="com.github.pitcer.partialscroll.action.PartialScrollUpAction"
+            id="com.github.pitcer.partialscroll.action.scroll.up.PartialScrollUpAction"
+            class="com.github.pitcer.partialscroll.action.scroll.up.PartialScrollUpAction"
             text="Partial Scroll Up"
-            description="Scrolls view partially up"
+            description="Scrolls partially up"
         />
         <action
-            id="com.github.pitcer.partialscroll.action.PartialScrollDownAction"
-            class="com.github.pitcer.partialscroll.action.PartialScrollDownAction"
+            id="com.github.pitcer.partialscroll.action.scroll.up.PartialScrollUpWithSelectionAction"
+            class="com.github.pitcer.partialscroll.action.scroll.up.PartialScrollUpWithSelectionAction"
+            text="Partial Scroll Up With Selection"
+            description="Scrolls partially up with selection"
+        />
+        <action
+            id="com.github.pitcer.partialscroll.action.scroll.up.PartialScrollUpViewAction"
+            class="com.github.pitcer.partialscroll.action.scroll.up.PartialScrollUpViewAction"
+            text="Partial Scroll Up View"
+            description="Scrolls view partially up"
+        />
+
+        <action
+            id="com.github.pitcer.partialscroll.action.scroll.down.PartialScrollDownAction"
+            class="com.github.pitcer.partialscroll.action.scroll.down.PartialScrollDownAction"
             text="Partial Scroll Down"
+            description="Scrolls partially down"
+        />
+        <action
+            id="com.github.pitcer.partialscroll.action.scroll.down.PartialScrollDownWithSelectionAction"
+            class="com.github.pitcer.partialscroll.action.scroll.down.PartialScrollDownWithSelectionAction"
+            text="Partial Scroll Down With Selection"
+            description="Scrolls partially down with selection"
+        />
+        <action
+            id="com.github.pitcer.partialscroll.action.scroll.down.PartialScrollDownViewAction"
+            class="com.github.pitcer.partialscroll.action.scroll.down.PartialScrollDownViewAction"
+            text="Partial Scroll Down View"
             description="Scrolls view partially down"
         />
+
     </actions>
 </idea-plugin>

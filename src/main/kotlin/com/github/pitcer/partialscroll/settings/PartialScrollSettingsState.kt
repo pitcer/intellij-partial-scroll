@@ -11,8 +11,9 @@ import com.intellij.util.xmlb.XmlSerializerUtil
     storages = [Storage("PartialScrollSettings.xml")]
 )
 class PartialScrollSettingsState : PersistentStateComponent<PartialScrollSettingsState> {
-
     var scrollLines: Int = 0
+
+    var scrollViewLines: Int = 0
 
     override fun getState(): PartialScrollSettingsState = this
 

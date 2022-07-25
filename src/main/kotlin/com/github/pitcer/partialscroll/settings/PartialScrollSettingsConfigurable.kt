@@ -14,14 +14,21 @@ class PartialScrollSettingsConfigurable : Configurable {
 
     override fun isModified(): Boolean {
         val settingsService = PartialScrollSettingsState.getInstance()
-        return settingsService.scrollLines != this.settingsComponent.getScrollLines()
+        return settingsService.scrollLines != this.settingsComponent.getScrollLines() &&
+            settingsService.scrollViewLines != this.settingsComponent.getScrollViewLines()
     }
 
     override fun apply() {
+        val settingsService = PartialScrollSettingsState.getInstance()
+
         val scrollLines = this.settingsComponent.getScrollLines()
         if (scrollLines != null && scrollLines >= 0) {
-            val settingsService = PartialScrollSettingsState.getInstance()
             settingsService.scrollLines = scrollLines
+        }
+
+        val scrollViewLines = this.settingsComponent.getScrollViewLines()
+        if (scrollViewLines != null && scrollViewLines >= 0) {
+            settingsService.scrollViewLines = scrollViewLines
         }
     }
 
