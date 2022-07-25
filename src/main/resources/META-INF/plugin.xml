@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.github.pitcer.partialscroll</id>
     <name>Partial Scroll</name>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <depends>com.intellij.modules.platform</depends>
     <vendor url="https://github.com/pitcer">Piotr Dobiech</vendor>
     <idea-version since-build="221"/>

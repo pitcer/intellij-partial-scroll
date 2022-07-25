@@ -26,5 +26,5 @@ class PartialScrollSettingsComponent {
 
     fun getScrollLines(): Int? = this.scrollLinesField.getNumber()
 
-    fun getScrollViewLines(): Int? = this.scrollLinesField.getNumber()
+    fun getScrollViewLines(): Int? = this.scrollViewLinesField.getNumber()
 }
