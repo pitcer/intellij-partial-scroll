@@ -1,30 +1,35 @@
 plugins {
     java
-    kotlin("jvm") version "1.7.10"
-    id("org.jetbrains.intellij") version "1.7.0"
+    kotlin("jvm") version "1.9.10"
+    id("org.jetbrains.intellij") version "1.16.0"
 }
 
 group = "com.github.pitcer.partialscroll"
-version = "0.2.1"
+version = "0.2.2"
 
 repositories {
     mavenCentral()
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+intellij {
+    version.set("2023.2")
 }
 
 tasks {
+    patchPluginXml {
+        version.set("${project.version}")
+        sinceBuild.set("232")
+    }
+
     compileKotlin {
         kotlinOptions {
-            jvmTarget = "11"
+            jvmTarget = "17"
         }
     }
 }
 
-intellij {
-    version.set("2022.1")
-    updateSinceUntilBuild.set(false)
-}

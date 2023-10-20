@@ -9,7 +9,8 @@ import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.actionSystem.EditorAction
 import com.intellij.openapi.editor.actionSystem.EditorActionHandler
 
-class PartialScrollDownWithSelectionAction : EditorAction(PartialScrollDownWithSelectionActionHandler())
+class PartialScrollDownWithSelectionAction :
+    EditorAction(PartialScrollDownWithSelectionActionHandler())
 
 private class PartialScrollDownWithSelectionActionHandler : EditorActionHandler() {
 

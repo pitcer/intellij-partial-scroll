@@ -15,7 +15,9 @@ private class PartialScrollUpActionHandler : EditorActionHandler() {
 
     override fun doExecute(editor: Editor, caret: Caret?, dataContext: DataContext?) {
         val settingsService = PartialScrollSettingsState.getInstance()
-        editor.scrollCaretVertically(-settingsService.scrollLines, ScrollSelectionOption.IGNORE_SELECTION)
+        editor.scrollCaretVertically(
+            -settingsService.scrollLines, ScrollSelectionOption.IGNORE_SELECTION
+        )
         super.doExecute(editor, caret, dataContext)
     }
 }
