@@ -1,11 +1,11 @@
 plugins {
     java
-    kotlin("jvm") version "1.9.10"
-    id("org.jetbrains.intellij") version "1.16.0"
+    kotlin("jvm") version "1.9.21"
+    id("org.jetbrains.intellij") version "1.16.1"
 }
 
 group = "com.github.pitcer.partialscroll"
-version = "0.2.2"
+version = "0.2.3"
 
 repositories {
     mavenCentral()
@@ -17,13 +17,13 @@ java {
 }
 
 intellij {
-    version.set("2023.2")
+    version.set("2023.3")
 }
 
 tasks {
     patchPluginXml {
         version.set("${project.version}")
-        sinceBuild.set("232")
+        sinceBuild.set("233")
     }
 
     compileKotlin {
