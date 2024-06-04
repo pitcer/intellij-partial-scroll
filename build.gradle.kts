@@ -1,11 +1,13 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     java
-    kotlin("jvm") version "1.9.21"
-    id("org.jetbrains.intellij") version "1.16.1"
+    kotlin("jvm") version "2.0.0"
+    id("org.jetbrains.intellij") version "1.17.3"
 }
 
 group = "com.github.pitcer.partialscroll"
-version = "0.2.3"
+version = "0.2.4"
 
 repositories {
     mavenCentral()
@@ -17,18 +19,18 @@ java {
 }
 
 intellij {
-    version.set("2023.3")
+    version.set("2024.1")
 }
 
 tasks {
     patchPluginXml {
         version.set("${project.version}")
-        sinceBuild.set("233")
+        sinceBuild.set("241")
     }
 
     compileKotlin {
-        kotlinOptions {
-            jvmTarget = "17"
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 }
