@@ -2,36 +2,52 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     java
-    kotlin("jvm") version "2.0.0"
-    id("org.jetbrains.intellij") version "1.17.3"
+    kotlin("jvm") version "2.0.10"
+    id("org.jetbrains.intellij.platform") version "2.0.1"
 }
 
 group = "com.github.pitcer.partialscroll"
-version = "0.2.4"
+version = "0.2.5"
 
 repositories {
     mavenCentral()
+
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
+dependencies {
+    intellijPlatform {
+        intellijIdeaCommunity(providers.gradleProperty("intellijPlatformVersion"))
+        instrumentationTools()
+        pluginVerifier()
+    }
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
-intellij {
-    version.set("2024.1")
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
+    }
 }
 
-tasks {
-    patchPluginXml {
-        version.set("${project.version}")
-        sinceBuild.set("241")
+intellijPlatform {
+    pluginConfiguration {
+        version = "${project.version}"
+
+        ideaVersion {
+            untilBuild = provider { null }
+        }
     }
 
-    compileKotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
+    pluginVerification {
+        ides {
+            ide(providers.gradleProperty("intellijPlatformVersion"))
         }
     }
 }
-

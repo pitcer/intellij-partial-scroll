@@ -1,6 +1,7 @@
 <idea-plugin>
     <id>com.github.pitcer.partialscroll</id>
     <name>Partial Scroll</name>
+    <description>Keyboard shortcuts to partially scroll caret or editor's view</description>
     <depends>com.intellij.modules.platform</depends>
     <vendor url="https://github.com/pitcer">Piotr Dobiech</vendor>
 
